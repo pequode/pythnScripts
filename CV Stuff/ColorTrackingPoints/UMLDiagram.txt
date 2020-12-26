@@ -1,0 +1,61 @@
+uml diagram for tracking spesphic colors
+// sorry for the java formating and the spelling errrors
+-------------------------
+Hierachy 
+	tester class
+		- runs program after getting input
+	method class 
+		- contains methods nessisary for tracking point
+		- used to integrate multiple Trackingpoit obj 
+		- creats a realtime updated array of x,y centers of point 
+		- adds and subtracts TrackingPoint objs 
+		- saves an array of previous points in an TP obj 
+			- uses TP OBj 
+			
+Class Method
+	- (int) number of TP Obj
+	- array tpobj [number of TP Obj]
+	- (float) time
+	- array position [time][[tpobj,[point (x,y)]]
+
+	-void disp()
+		getMousePoint() 
+	void run()
+		Disp()
+		printPositionC() 
+	int getNumTpObj()
+	float getTime()
+	int getTpObj(int i)
+	void removeTpObj(int i)
+	void addTpObj(point p) 
+	point getMousePoint() 
+	void printPositionC()
+	void resetTime()
+	String posToStr()
+Class TpObj
+	- color x
+	- initialPos x
+	-colorTolorance x
+	-positionTolorance x
+
+	- point Array [2] Recentpos x
+	- point exectedPos x
+	
+	xstring getColor() x
+	point getInitialPos() x
+	int getColorTolorance() 
+	int getPosTolorance()
+	string getRecentPos()
+	string getExpectedPos()
+	- void setExpectedPos() -------------- 
+	- void setToleranceC(int) x
+	- void setToleranceP(int) x 
+
+	point findNextPoint()
+	-void setRecentPos()
+	void startTracking()
+	
+
+	
+		
+	

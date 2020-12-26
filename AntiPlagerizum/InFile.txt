@@ -1,0 +1,22 @@
+Unlike most malware, Stuxnet does little harm to computers and networks that do not meet specific configuration requirements; 
+"The attackers took great care to make sure that only their designated targets were hit... It was a marksman's job."[47] While the
+ worm is promiscuous, it makes itself inert if Siemens software is not found on infected computers, and contains safeguards to prevent 
+each infected computer from spreading the worm to more than three others, and to erase itself on 24 June 2012.[36]
+For its targets, Stuxnet contains, among other things, code for a man-in-the-middle attack that fakes industrial process control sensor 
+signals so an infected system does not shut down due to detected abnormal behavior.[36][47][48] Such complexity is very unusual for malware. 
+The worm consists of a layered attack against three different systems:    The Windows operating system, Siemens PCS 7, WinCC and STEP7 industrial
+ software applications that run on Windows and One or more Siemens S7 PLCs.  Windows infection Stuxnet attacked Windows systems using an unprecedented
+four zero-day attacks (plus the CPLINK vulnerability and a vulnerability used by the Conficker worm[49]). It is initially spread using infected removable
+ drives such as USB flash drives,[19][43] which contain Windows shortcut files to initiate executable code.[50] The worm then uses other exploits and 
+techniques such as peer-to-peer RPC to infect and update other computers inside private networks that are not directly connected to the Internet.
+[51][52][53] The number of zero-day exploits used is unusual, as they are highly valued and malware creators do not typically make use of 
+(and thus simultaneously make visible) four different zero-day exploits in the same worm.[21] Amongst these exploits were remote code execution on a 
+computer with Printer Sharing enabled,[54] and the LNK/PIF vulnerability,[55] in which file execution is accomplished when an icon is viewed in Windows Explorer;
+ negating the need for user interaction.[56] Stuxnet is unusually large at half a megabyte in size,[51] and written in several different programming languages 
+(including C and C++) which is also irregular for malware.[13][18][48] The Windows component of the malware is promiscuous in that it spreads relatively quickly 
+and indiscriminately.[43] The malware has both user-mode and kernel-mode rootkit capability under Windows,[53] and its device drivers have been digitally signed 
+with the private keys of two certificates that were stolen from separate well-known companies, JMicron and Realtek, both located at Hsinchu Science Park in Taiwan.
+[43][51] The driver signing helped it install kernel-mode rootkit drivers successfully without users being notified, and therefore it remained undetected for a 
+elatively long period of time.[57] Both compromised certificates have been revoked by Verisign.Two websites in Denmark and Malaysia were configured as command and 
+control servers for the malware, allowing it to be updated, and for industrial espionage to be conducted by uploading information. Both of these domain names have 
+subsequently been redirected by their DNS service provider to Dynadot as part of a global effort to disable the malware.[53][36] 

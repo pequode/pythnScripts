@@ -1,32 +1,27 @@
 # -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-This is a temporary script file.
-"""
 # this is for creating bots
 from pynput.mouse import Listener as ls
 from pynput.mouse import Button as btt
-from pynput.mouse import Controller as cnt 
+from pynput.mouse import Controller as cnt
 from pynput.keyboard import Key,Controller
 from pynput.keyboard import Listener as lsn
-import logging 
-import time 
+import logging
+import time
 import math
 path = "C:/Users/George Kunt Scheller/Music/Various Artists/"
 logging.basicConfig(filename=(path+"log.txt"),level=logging.DEBUG, format = '%(asctime)s: %(message)s')
-keyboard = Controller() 
+keyboard = Controller()
 mouse = cnt()
 PathToFile = "C:/Users/George Kunt Scheller/Music/Various Artists/log.txt"
 cntrPressed = False
 selecting = False
-x1 = 0 
+x1 = 0
 y1  = 0
 '''
 def on_move(x,y):
     global selecting
     distance  = ((x-x1)^2+(y-y1)^2)^(1.0/2)
-    
+
     selecting = distance > 10
 '''
 def on_move(x, y):
@@ -53,7 +48,7 @@ def on_click(x,y,button,pressed):
     else:
         x1 = x
         y1 = y
-        selecting = False 
+        selecting = False
     pass
 def on_scroll(x,y,dx,dy):
     fl = open(PathToFile,'a')
@@ -72,7 +67,7 @@ def pressed(key):
 
     elif key == Key.shift_l:
         line = "k@\n"
-        
+
     elif key == Key.alt_l :
         line = "k^\n"
     elif key == Key.esc:
@@ -90,7 +85,7 @@ def reled(key):
         pass
      if key == Key.esc:
         return False
-    
+
 
 def copy():
     keyboard.press(Key.ctrl_l)
@@ -117,14 +112,14 @@ def findkey():
     time.sleep(0.1)
     keyboard.press(Key.enter)
     keyboard.release(Key.enter)
-    
+
 def paste():
     keyboard.press(Key.ctrl_l)
     keyboard.press('v')
     keyboard.release(Key.ctrl_l)
     keyboard.release('v')
-    
-def moveTo(x1,y1,devs): 
+
+def moveTo(x1,y1,devs):
     x = mouse._position_get()[0]
     y = mouse._position_get()[1]
     dy = (y1-y)/devs
@@ -138,7 +133,7 @@ def moveTo(x1,y1,devs):
 def readInstructions():
     f = open("C:/Users/George Kunt Scheller/Music/Various Artists/log.txt",'r')
     ls = f.readlines()
-    
+
     for line in ls:
         print (line),
         if line[0] == 'm':
@@ -183,13 +178,13 @@ def readInstructions():
             elif line[1] == '^':
                 findkey()
         else:
-            print("error invalid instructions")            
+            print("error invalid instructions")
     f.close()
-    
+
 def recordSteps():
     f = open(PathToFile,"w")
     f.close()
-    with ls(on_move=on_move, on_click = on_click, on_scroll=on_scroll) as listener: #on_move=on_move, 
+    with ls(on_move=on_move, on_click = on_click, on_scroll=on_scroll) as listener: #on_move=on_move,
         with lsn(on_press = pressed,  on_release=reled) as listener:
             listener.join()
 recordSteps()
@@ -244,7 +239,7 @@ copy()
 moveTo(400,30,3)
 mouse.click(btt.left,1)
 time.sleep(0.1)
-findkey()   
+findkey()
 #find("name")
 moveTo(800,675,1)
 mouse.click(810,675,3)

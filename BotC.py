@@ -1,3 +1,4 @@
+#genneral Program to Repeat mouse movements, like an autoclicker
 import pynput
 import time
 from pynput.mouse import Button,Controller
@@ -39,7 +40,6 @@ def typeThisN(stri,n):
         for char in stri:
             keyboard.press(char)
             keyboard.release(char)
-            time.sleep(delayK)     
+            time.sleep(delayK)
 clickHere(1200,200)
 typeThis("print(\"Hello World!\")")
-

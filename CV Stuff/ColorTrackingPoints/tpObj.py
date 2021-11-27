@@ -2,7 +2,7 @@
 this class is in charge of tracking individual points of a specphic color
 it is a rough draft
 @author George Kent-Scheller
-@version 07132018 (12:53AM-
+@version 07132018 
 '''
 import numpy as np
 import cv2
@@ -12,21 +12,21 @@ import os
 from point import Point
 
 class tpObj:
-   
-    
+
+
     # this creates a camera obj for the prg
     goPro = cv2.VideoCapture(0)
     # this gives input for the desired size of the image given by width. it is user input to deterime track quality
     desImgSzWd = 250
 
     # this gets the height of the image as a float value
-    width = goPro.get(3) 
+    width = goPro.get(3)
     height = goPro.get(4)
     sizeratio = (width * 1.0) /height
     desImgSzHt = (int)(desImgSzWd/sizeratio)
     # this creats a font for feedback on the img
     font=cv2.FONT_HERSHEY_SIMPLEX
-    
+
     # this is a definition of center definitions of color
     blue = np.array([240,168,148])#0
     green = np.array([120,168,148])#1
@@ -42,8 +42,8 @@ class tpObj:
     lowKR = 3
     HighKR = 10
     #just for george testing
-    
-    # this records the inital position & the color being tracked 
+
+    # this records the inital position & the color being tracked
     def __init__(self,color):# color is an int # 1-6
         self.initialPos = Point(0,0)
         self.pColor = colors[color]
@@ -88,19 +88,19 @@ class tpObj:
     def aprox (self):
         # 0 is the most recent entry in the array
         self.expectedPos = recentPos[1].aproxT(recentPos[0])
-    # this allows us to place a track for each point    
+    # this allows us to place a track for each point
     def changeTrPosition(event,x,y,flags,param):
         if event == cv2.EVENT_LBUTTONDOWN:
             self.recentPos[1] = self.recentPos[0]
             self.recentPos[0] = Point(x,y)
-            
+
     def checkTrPostion (self, ppoint):
         if self.recentPos[0].getDistanceBetween(ppoint) < pTolerance:
             self.recentPos[1] = self.recentPos[0]
             self.recentPos[0] = ppoint
         else:
             print("you messed up bro")
-        
+
     def runTrack (self):
         while True:
             # this returns fps data that helps measure processing time
@@ -128,10 +128,10 @@ class tpObj:
 
             for i in range (len(conts)):
                 x,y,w,h=cv2.boundingRect(conts[i])
-                # this is where i check tr pos 
+                # this is where i check tr pos
                 cv2.rectangle(img,(x,y),(x+w,y+h),(0,0,255),1)
                 cv2.putText(img,str(i+1),(x,y+h),font,1,(0,255,255),2)
-           
+
             #this provides an exit key
             if cv2.waitKey(2) == ord(' '):
                     cv2.destroyAllWindows()
@@ -144,16 +144,15 @@ class tpObj:
             cv2.waitKey(10)
         goPro.release()
 
-    
-    
-    
 
 
-  
-        
+
+
+
+
+
 
 h = tpObj(3)
 print(h.pColor)
 #always need self, even when refering to class variables // class methods run on every obj use @classmethod
     #def bla ( cls, peram):
-                 

@@ -25,6 +25,10 @@ I needed a place to store all of the projects I worked on through out the years.
 
   This is a file designed to rename all the files in a directory. It helps with naming camera image files more verbosely.It was also my first exploration with both input and file-system navigation.
 
+- passGen.py
+
+  This is a small program to randomly generate passwords for me. I wrote this myself because I was interested in controlling my random password generation.
+
 
 
 ### Goal:

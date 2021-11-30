@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">calc-u-later</string>
-    <string name="private_version">d1cf7e2b1406d098599ef87f38423e35cf0fc56b</string>
-    <string name="presplash_color">#000000</string>
-    <string name="urlScheme">kivy</string>
-</resources>

@@ -1,0 +1,8 @@
+swing on
+scan body parts to improve swing
+what ML model are you gonna use 
+
+
+
+
+create gannt chart

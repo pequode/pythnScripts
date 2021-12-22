@@ -1,4 +1,5 @@
 import os
+# this program was used to help me learn the os class and classing in python
 class FileOrganization:
     def __init__(self):
         self.none = "none"
@@ -14,13 +15,14 @@ class FileOrganization:
 
         ownName = os.path.basename(__file__)
         count = 0
+        # given inputs select for files in this director delets files
         for f in os.listdir():
             if ( f != ownName and f != "System Volume Information"):
                 file_name, file_ext = os.path.splitext(f)
                 dsHveKyWrd = kkk in file_name
                 if((file_ext != w) and (file_name != z) and ((x == file_name) or ( y == file_ext) or dsHveKyWrd ) ):
                     os.remove(f)
-                    
+
     def renameFiles(x,y,z,w,kkk):
         '''
         #x = input('new front(-1 for same): ')
@@ -37,7 +39,7 @@ class FileOrganization:
         Num = int(Num)
         ownName = os.path.basename(__file__)
         count=0
-
+        # given inputs rename files
         for f in os.listdir():
             if ( f != ownName and f != "System Volume Information" and f != "ProgramManager.py"):
                 file_name, file_ext = os.path.splitext(f)
@@ -54,5 +56,3 @@ class FileOrganization:
                         newName += "." + y
                         #f_title, f_course, f_num = file_name.split("-")
                     os.rename(f, newName)
-
-

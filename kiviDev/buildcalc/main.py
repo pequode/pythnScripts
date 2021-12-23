@@ -4,6 +4,7 @@ from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
 from kivy.input.recorder import Recorder
 import time
+# same as the calculator app 
 class MainApp(App):
     def build(self):
         self.recorder = Recorder(filename='gasslit.kvi')

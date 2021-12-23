@@ -8,11 +8,11 @@ from pynput.keyboard import Listener as lsn
 import logging
 import time
 import math
-path = "C:/Users/George Kunt Scheller/Music/Various Artists/"
+path = ""
 logging.basicConfig(filename=(path+"log.txt"),level=logging.DEBUG, format = '%(asctime)s: %(message)s')
 keyboard = Controller()
 mouse = cnt()
-PathToFile = "C:/Users/George Kunt Scheller/Music/Various Artists/log.txt"
+PathToFile = "./log.txt"
 cntrPressed = False
 selecting = False
 x1 = 0
@@ -24,6 +24,7 @@ def on_move(x,y):
 
     selecting = distance > 10
 '''
+# this program tracks your movements then replays them
 def on_move(x, y):
     global selecting
     distance  = math.sqrt((x-x1)**2+(y-y1)**2)
@@ -131,7 +132,7 @@ def moveTo(x1,y1,devs):
     mouse.position = (x1,y1)
 
 def readInstructions():
-    f = open("C:/Users/George Kunt Scheller/Music/Various Artists/log.txt",'r')
+    f = open("./log.txt",'r')
     ls = f.readlines()
 
     for line in ls:
@@ -187,8 +188,8 @@ def recordSteps():
     with ls(on_move=on_move, on_click = on_click, on_scroll=on_scroll) as listener: #on_move=on_move,
         with lsn(on_press = pressed,  on_release=reled) as listener:
             listener.join()
-recordSteps()
-readInstructions()
+recordSteps() # record steps into a file
+readInstructions()# reads in isntuctions from a file
 
 
 

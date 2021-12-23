@@ -2,7 +2,7 @@ from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.textinput import TextInput
-
+# a basic calculator app taken from the kivi tutorals page. I did not write this but it helped with the syntax
 class MainApp(App):
     def build(self):
         self.operators = ["/", "*", "+", "-"]

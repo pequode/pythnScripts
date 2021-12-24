@@ -12,8 +12,11 @@ I needed a place to store all of the projects I worked on through out the years.
 - CV Stuff
 
   A project to do computer vision tracking with OpenCV. It is currently one of my oldest scripts. It was used to provide location data for a program that I developed while working for IPPAS. I also used this program to learn how to create classes.
+
 - Cyber Security Helper Functions
+
   This dir consists of small files that I used very situationally to solve specific Cyber Security challenges. These scripts are not very robust but,like many of the files in this repo, are meant to give me context on how to solve future challenges I may face.   
+
 - kiviDev
 
   This was a small experiment to use Kivi to create a mobile app that would play a recording. It turned out halfway through that the module that allowed mic access for the app I wanted was outdated and didn't work. I then abandoned the project but it is still good reference for how to use kivi
